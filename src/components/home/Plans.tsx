@@ -2,7 +2,7 @@ import { TiTick } from "react-icons/ti";
 
 const Plans = () => {
   return (
-    <div className="w-3/4 md:w-2/4 lg:w-1/4 hover:animate-background rounded-xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 p-0.5 shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_4s] dark:shadow-gray-700/25 text-center">
+    <div className="w-3/4 md:w-2/4 lg:w-1/4 hover:animate-background rounded-xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 p-0.5 shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_4s] dark:shadow-gray-700/25 text-center mb-5">
       <div className="flex flex-col items-center justify-center rounded-[10px] bg-white p-4 !pt-5 sm:p-6 dark:bg-gray-900">
         <h2 className="text-3xl font-medium mb-3 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-transparent">
           Premium

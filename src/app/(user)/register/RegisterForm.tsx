@@ -22,8 +22,6 @@ const RegisterForm = () => {
     if (email === "") return toast.error("Email can't be empty");
     if (password === "") return toast.error("Password can't be empty");
 
-    console.log({ username, email, password });
-
     try {
       setLoading(true);
       await axios.post(`${DOMAIN}/api/users/register`, {

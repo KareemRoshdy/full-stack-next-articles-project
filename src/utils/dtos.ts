@@ -33,3 +33,7 @@ export interface CreateCommentDTO {
 export interface UpdateCommentDTO {
   text: string;
 }
+
+export interface UpdateUserRoleDTO {
+  isAdmin: boolean | string;
+}

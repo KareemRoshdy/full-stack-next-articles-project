@@ -5,6 +5,7 @@ import { FaRegComments } from "react-icons/fa";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { FiUser } from "react-icons/fi";
 
 const AdminSidebar = () => {
   const pathname = usePathname();
@@ -16,11 +17,12 @@ const AdminSidebar = () => {
   useEffect(() => {
     if (page === "admin") setActive(0);
     if (page === "articles-table") setActive(1);
-    if (page === "comments-table") setActive(2);
+    if (page === "users-table") setActive(2);
+    if (page === "comments-table") setActive(3);
   }, [page]);
 
   return (
-    <div className="flex h-screen flex-col justify-between border-e border-gray-700">
+    <div className="flex h-screen flex-col justify-between">
       <div className="px-4 py-6">
         <ul className="mt-6 space-y-1">
           <li>
@@ -51,10 +53,22 @@ const AdminSidebar = () => {
 
           <li>
             <Link
-              href="/admin/comments-table"
+              href="/admin/users-table"
               className={`cursor-pointer flex items-center md:justify-start justify-center rounded-lg px-4 py-2 text-sm text-white hover:bg-[#1f2937] mb-2 gap-4
               ${active === 2 && "bg-[#1f2937]"}`}
               onClick={() => setActive(2)}
+            >
+              <FiUser className="text-xl" />
+              <span className="hidden md:block">Users</span>
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              href="/admin/comments-table"
+              className={`cursor-pointer flex items-center md:justify-start justify-center rounded-lg px-4 py-2 text-sm text-white hover:bg-[#1f2937] mb-2 gap-4
+              ${active === 3 && "bg-[#1f2937]"}`}
+              onClick={() => setActive(3)}
             >
               <FaRegComments className="text-xl" />
               <span className="hidden md:block">Comments</span>

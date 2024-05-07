@@ -3,6 +3,7 @@ import AddArticleForm from "./AddArticleForm";
 import { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { verifyTokenForPage } from "@/utils/verifyToken";
+import DashboardDetails from "./DashboardDetails";
 
 export const metadata: Metadata = {
   title: "Admin Dashboard",
@@ -17,7 +18,8 @@ const AdminPage = () => {
   if (user?.isAdmin === false) return redirect("/");
 
   return (
-    <div>
+    <div className="p-5">
+      <DashboardDetails />
       <AddArticleForm />
     </div>
   );

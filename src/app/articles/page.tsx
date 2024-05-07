@@ -5,6 +5,7 @@ import SearchArticleInput from "@/components/articles/SearchArticleInput";
 import { ARTICLE_PER_PAGE } from "@/utils/constants";
 import { Article } from "@prisma/client";
 import { Metadata } from "next";
+import prisma from "@/utils/db"
 
 export const metadata: Metadata = {
   title: "Articles",
@@ -18,7 +19,7 @@ interface Props {
 const ArticlesPage = async ({ searchParams }: Props) => {
   const { pageNumber } = searchParams;
   const articles: Article[] = await getArticles(pageNumber);
-  const count: number = await getArticlesCount();
+  const count: number = await prisma.article.count();
   const pages = Math.ceil(count / ARTICLE_PER_PAGE);
 
   return (

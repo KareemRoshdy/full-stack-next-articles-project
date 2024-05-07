@@ -26,7 +26,7 @@ const Header = async () => {
                 <UserInfo user={user} />
               ) : (
                 <>
-                  <div className="md:flex md:gap-4">
+                  <div className="md:flex ml-2 md:gap-4">
                     <Link
                       className="rounded-md bg-blue-600  px-5 py-2.5 text-sm font-medium text-white shadow dark:hover:bg-blue-500"
                       href="/login"
